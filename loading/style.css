@@ -1,0 +1,33 @@
+body {
+    background-color: slateblue;
+}
+
+body::before {
+    content: 'Loading';
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    text-shadow: 0 0 5px white;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    background: conic-gradient(black, white);
+    animation: spin infinite linear 3s;
+    box-shadow: 0 0 20px 20px rgba(255, 255, 255, 1);
+}
+
+@keyframes spin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
